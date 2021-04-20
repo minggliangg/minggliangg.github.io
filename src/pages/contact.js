@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 import Navigation from "../components/navigation";
 
-export default function Home() {
+export default function Contact(){
     return <>
         <Navigation/>
-        <div>Hello world!</div>
+        <div>Contact Page</div>
     </>
 }

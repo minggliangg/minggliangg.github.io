@@ -1,9 +1,9 @@
 import React from "react"
 import Navigation from "../components/navigation";
 
-export default function Home() {
+export default function Blog() {
     return <>
         <Navigation/>
-        <div>Hello world!</div>
+        <h1>My Blog</h1>
     </>
 }
