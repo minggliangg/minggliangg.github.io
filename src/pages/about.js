@@ -1,9 +1,8 @@
 import React from "react"
-import Navigation from "../components/navigation";
+import Layout from "../components/Layout";
 
 export default function About(){
-    return <>
-        <Navigation/>
-        <div>About Page</div>
-    </>
+    return <Layout>
+        <h1>About Page</h1>
+    </Layout>
 }

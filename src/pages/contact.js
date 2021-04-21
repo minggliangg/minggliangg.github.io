@@ -1,9 +1,9 @@
 import React from "react";
-import Navigation from "../components/navigation";
+import Layout from "../components/Layout";
 
 export default function Contact(){
-    return <>
-        <Navigation/>
-        <div>Contact Page</div>
-    </>
+    return <Layout>
+
+        <h1>Contact Page</h1>
+    </Layout>
 }
