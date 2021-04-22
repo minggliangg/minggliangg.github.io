@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout";
 
-export default function About(){
+export default function Error404(){
     return <Layout>
-        <h1>About Page</h1>
+        <h1>404</h1>
 
     </Layout>
 }
