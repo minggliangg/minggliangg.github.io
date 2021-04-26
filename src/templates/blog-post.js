@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import {graphql} from "gatsby";
+import * as blogPostStyles from "../styles/blog-post.module.scss"
 
 export const query = graphql`query(
     $slug:String
@@ -24,7 +25,7 @@ export default function BlogPost(props) {
     return <Layout>
         <h1>{props.data.markdownRemark.frontmatter.title}</h1>
         <p>{props.data.markdownRemark.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={
+        <div className={blogPostStyles.entryBody} dangerouslySetInnerHTML={
             {__html: props.data.markdownRemark.html}
         }/>
     </Layout>

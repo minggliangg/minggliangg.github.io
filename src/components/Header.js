@@ -17,7 +17,7 @@ export default function Header() {
         <h1 className={headerStyle.title}>{data.site.siteMetadata.title}</h1>
         <Link to="/" className={headerStyle.navLink}>Home</Link>
         <Link to="/blog" className={headerStyle.navLink}>Blog</Link>
-        <Link to="/contact" className={headerStyle.navLink}>Contact</Link>
+        <Link to="/projects" className={headerStyle.navLink}>Projects</Link>
         <Link to="/about" className={headerStyle.navLink}>About</Link>
     </div>
 }
