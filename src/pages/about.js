@@ -8,7 +8,7 @@ import {faLinkedin, faGithub, faInstagram} from "@fortawesome/free-brands-svg-ic
 export default function About() {
     return <Layout>
         <h1>About</h1>
-        <StaticImage className={aboutStyles.profileImage} src="../assets/profile.jpeg" alt="Profile Image"/>
+        <StaticImage className={aboutStyles.profileImage} src="../assets/profile.png" alt="Profile Image"/>
         <p>Hi! I am Ming Liang, a junior developer from Singapore
             <span role="img" aria-label="Singapore">🇸🇬</span>
         </p>
