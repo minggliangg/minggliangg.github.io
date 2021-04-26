@@ -1,1 +1,1 @@
-{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"Hello World!","date":"22/04/2021"},"fields":{"slug":"hello-world"}}}]}}}
+{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"This site was made with Gatsby","date":"26/04/2021"},"fields":{"slug":"gatsby-site"}}},{"node":{"frontmatter":{"title":"Hello World!","date":"22/04/2021"},"fields":{"slug":"hello-world"}}}]}}}

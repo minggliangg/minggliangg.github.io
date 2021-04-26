@@ -1,2 +1,0 @@
-(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[501],{262:function(e,t,l){"use strict";l.r(t),l.d(t,{default:function(){return a}});var n=l(7294),r=l(1883);function a(){return n.createElement(n.Fragment,null,n.createElement(r.Z,null),n.createElement("div",null,"Contact Page"))}}}]);
-//# sourceMappingURL=component---src-pages-contact-js-85fc42a3150e3f4c7d41.js.map
