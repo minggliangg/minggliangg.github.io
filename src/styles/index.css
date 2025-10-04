@@ -1,5 +1,13 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-    themes: light --default, dracula --prefersdark;
-  }
+  themes:
+    nord --default,
+    forest --prefersdark;
+}
+@plugin "daisyui/theme" {
+  name: "nord";
+  default: true;
+  --radius-box: 1rem;
+  --radius-field: 2rem;
+}

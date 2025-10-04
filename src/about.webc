@@ -1,0 +1,12 @@
+---
+layout: layouts/base.webc
+title: "About"
+---
+
+<div class="flex flex-col gap-4">
+  <h1 class="text-3xl font-bold">About Me</h1>
+  <p>
+    Hi, I'm Ming Liang, a software engineer based in Singapore 🇸🇬. I love
+    building web applications and exploring new technologies.
+  </p>
+</div>

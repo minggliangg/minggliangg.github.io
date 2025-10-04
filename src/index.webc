@@ -3,16 +3,26 @@ layout: layouts/base.webc
 title: "Ming Liang's Page"
 ---
 
-<div class="flex flex-col gap-4">
-  <h1 class="text-3xl font-bold">Hi, I am Ming Liang!</h1>
-  <p class="text-xl font-normal">
-    I'm a software engineer based in Singapore 🇸🇬
-  </p>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+  <div class="flex flex-col gap-4 flex-1 order-2 md:order-1">
+    <h1 class="text-3xl font-bold">Hi, I am Ming Liang!</h1>
+    <p class="text-xl font-normal">
+      I'm a software engineer based in Singapore 🇸🇬
+    </p>
 
-  <h2 class="text-2xl font-bold">Posts</h2>
-  <ul>
-    <li webc:for="post of collections.posts">
-      <a class="hover:underline" :href="post.url" @text="post.data.title"></a>
-    </li>
-  </ul>
+    <h2 class="text-2xl font-bold">Posts</h2>
+    <ul>
+      <li webc:for="post of collections.posts">
+        <a class="hover:underline" :href="post.url" @text="post.data.title"></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex-shrink-0 order-1 md:order-2">
+    <img
+      src="/images/profile.png"
+      alt="Ming Liang"
+      class="w-64 object-cover aspect-auto"
+    />
+  </div>
 </div>

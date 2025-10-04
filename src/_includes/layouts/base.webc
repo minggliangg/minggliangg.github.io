@@ -5,6 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title @text="title"></title>
+    <link webc:keep rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
+    <link webc:keep rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />
+    <link
+      webc:keep
+      rel="apple-touch-icon"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link webc:keep rel="manifest" href="/favicons/manifest.webmanifest" />
   </head>
   <body class="min-h-screen flex flex-col">
     <header></header>

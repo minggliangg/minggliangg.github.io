@@ -12,6 +12,10 @@ export default async function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // passthrough copy
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/favicons");
+
   // tailwind + daisyui
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/styles/index.css");
