@@ -1,14 +1,15 @@
 <div class="navbar bg-base-100 shadow-sm">
-  <div class="flex-1">
-    <a
-      class="text-xl no-underline hover:no-underline active:bg-transparent"
-      href="/"
-    >
-      <logo class="fill-current w-18 h-18"></logo
-    ></a>
-  </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-2 gap-2 sm:px-6 sm:gap-4 md:px-10 md:gap-8 items-center">
+  <div class="max-w-4xl mx-auto w-full flex justify-between">
+    <div class="flex-1">
+      <a
+        class="text-xl no-underline hover:no-underline active:bg-transparent"
+        href="/"
+      >
+        <logo class="fill-current w-18 h-18"></logo
+      ></a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-2 gap-2 sm:px-6 sm:gap-4 md:px-10 md:gap-8 items-center">
       <li><a href="/projects/">Projects</a></li>
       <li><a href="/posts/">Posts</a></li>
       <li><a href="/about/">About</a></li>

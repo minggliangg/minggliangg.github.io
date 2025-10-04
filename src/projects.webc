@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.webc
-title: "Posts"
+title: "Projects"
 ---
 
 <div class="flex flex-col gap-4">

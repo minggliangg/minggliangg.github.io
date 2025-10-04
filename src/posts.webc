@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.webc
-title: "Projects"
+title: "Posts"
 ---
 
 <div class="flex flex-col gap-4">
@@ -12,7 +12,7 @@ title: "Projects"
   >
     <p>
       <span
-        class="text-sm text-neutral-content mr-2"
+        class="text-sm text-stone-600 dark:text-stone-400 mr-2"
         @text="post.date.toLocaleDateString()"
       ></span>
       <span class="font-bold" @text="post.data.title"></span>
