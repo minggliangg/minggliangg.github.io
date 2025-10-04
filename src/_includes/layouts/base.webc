@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link webc:keep rel="stylesheet" href="/styles/index.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title @text="title"></title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header></header>
+    <div class="px-8 py-10">
+      <slot @raw="content" webc:nokeep></slot>
+    </div>
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.webc": "html"
+  },
+  "css.lint.unknownAtRules": "ignore"
+}

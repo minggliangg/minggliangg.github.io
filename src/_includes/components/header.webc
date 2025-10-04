@@ -1,0 +1,15 @@
+<div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a
+      class="text-xl no-underline hover:no-underline active:bg-transparent"
+      href="/"
+    >
+      <logo class="fill-current w-18 h-18"></logo
+    ></a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-10">
+      <li><a href="/posts/">Posts</a></li>
+    </ul>
+  </div>
+</div>

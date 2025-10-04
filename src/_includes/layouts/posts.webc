@@ -1,0 +1,19 @@
+---
+layout: layouts/base.webc
+---
+
+<article class="prose prose-stone">
+  <h1 @text="title"></h1>
+  <div class="flex gap-4 text-sm text-stone-600 dark:text-stone-400 mb-4">
+    <div class="flex items-center gap-2">
+      <span class="font-medium">Created:</span>
+      <time datetime="@text="created" @text="created"></time>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="font-medium">Updated:</span>
+      <time datetime="@text="updated" @text="updated"></time>
+    </div>
+  </div>
+  <p></p>
+  <slot @raw="content" webc:nokeep></slot>
+</article>

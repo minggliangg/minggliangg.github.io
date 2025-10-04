@@ -1,0 +1,13 @@
+---
+layout: layouts/base.webc
+title: "Posts"
+---
+
+<div class="flex flex-col gap-4">
+  <h1 class="text-3xl font-bold">Posts</h1>
+  <a
+    webc:for="post of collections.posts"
+    :href="post.url"
+    @text="post.data.title"
+  ></a>
+</div>
