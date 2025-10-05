@@ -19,26 +19,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/favicons");
 
-  // date parsing with luxon
-  eleventyConfig.addDateParsing(function (dateValue) {
-    let localDate;
-    if (dateValue instanceof Date) {
-      // and YAML
-      localDate = DateTime.fromJSDate(dateValue, { zone: "utc" }).setZone(
-        TIME_ZONE,
-        { keepLocalTime: true },
-      );
-    } else if (typeof dateValue === "string") {
-      localDate = DateTime.fromISO(dateValue, { zone: TIME_ZONE });
-    }
-    if (localDate?.isValid === false) {
-      throw new Error(
-        `Invalid \`date\` value (${dateValue}) is invalid for ${this.page.inputPath}: ${localDate.invalidReason}`,
-      );
-    }
-    return localDate;
-  });
-
   // tailwind + daisyui
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/styles/index.css");

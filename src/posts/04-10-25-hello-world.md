@@ -1,6 +1,7 @@
 ---
 title: "Hello, World!"
 description: A short welcome note to kick off my new site — what it’s about, what I’m building with, and what I hope to share here.
+date: 2025-10-04T21:59:43.10+08:00
 ---
 
 Welcome to my site! I'm **Ming Liang**, a software engineer based in Singapore.  
