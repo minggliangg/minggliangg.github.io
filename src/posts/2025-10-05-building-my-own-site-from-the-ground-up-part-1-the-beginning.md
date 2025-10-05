@@ -2,7 +2,6 @@
 title: "Building My Own Site from the Ground Up (Part 1: The Beginning)"
 tags: "Rebuilding My Digital Home"
 description: Kicking off a new build series where I document the process of creating my personal site from scratch using Eleventy, Tailwind CSS, and DaisyUI.
-date: 2025-10-05T17:00:00.00+08:00
 ---
 
 ## A Little Backstory
