@@ -1,6 +1,5 @@
 ---
 title: "Hello, World!"
-created: Created
 description: A short welcome note to kick off my new site — what it’s about, what I’m building with, and what I hope to share here.
 ---
 

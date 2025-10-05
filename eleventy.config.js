@@ -4,6 +4,9 @@ import pluginWebc from "@11ty/eleventy-plugin-webc";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import tailwindcss from "@tailwindcss/postcss";
 import postcss from "postcss";
+import { DateTime } from "luxon";
+
+const TIME_ZONE = "Asia/Singapore";
 
 export default async function (eleventyConfig) {
   // plugins
@@ -15,6 +18,26 @@ export default async function (eleventyConfig) {
   // passthrough copy
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/favicons");
+
+  // date parsing with luxon
+  eleventyConfig.addDateParsing(function (dateValue) {
+    let localDate;
+    if (dateValue instanceof Date) {
+      // and YAML
+      localDate = DateTime.fromJSDate(dateValue, { zone: "utc" }).setZone(
+        TIME_ZONE,
+        { keepLocalTime: true },
+      );
+    } else if (typeof dateValue === "string") {
+      localDate = DateTime.fromISO(dateValue, { zone: TIME_ZONE });
+    }
+    if (localDate?.isValid === false) {
+      throw new Error(
+        `Invalid \`date\` value (${dateValue}) is invalid for ${this.page.inputPath}: ${localDate.invalidReason}`,
+      );
+    }
+    return localDate;
+  });
 
   // tailwind + daisyui
   eleventyConfig.on("eleventy.before", async () => {
