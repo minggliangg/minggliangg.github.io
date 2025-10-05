@@ -5,17 +5,38 @@ title: "Posts"
 
 <div class="flex flex-col gap-4">
   <h1 class="text-3xl font-bold">Posts</h1>
-  <a
-    webc:for="post of collections.posts"
-    :href="post.url"
-    class="flex flex-col"
-  >
-    <p>
-      <span
-        class="text-sm text-stone-600 dark:text-stone-400 mr-2"
-        @text="post.date.toLocaleDateString()"
-      ></span>
-      <span class="font-bold" @text="post.data.title"></span>
-    </p>
-  </a>
+  <p class="text-base-content/70">
+    Long-form notes on the projects I am building, experiments I am trying, and
+    the lessons picked up along the way.
+  </p>
+  <ul class="flex flex-col gap-6">
+    <li webc:for="post of collections.posts.toReversed()" class="group">
+      <a
+        :href="post.url"
+        class="block rounded-2xl border border-primary/30 bg-base-100 p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-md"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <p
+            class="text-xs font-medium uppercase tracking-[0.15em] text-base-content/50"
+            @text="post.date.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })"
+          ></p>
+          <span
+            aria-hidden="true"
+            class="text-base-content/30 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-base-content/50"
+          >
+            →
+          </span>
+        </div>
+        <h2
+          class="mt-4 text-2xl font-semibold leading-tight text-base-content transition-colors duration-200 group-hover:text-primary"
+          @text="post.data.title"
+        ></h2>
+        <p
+          webc:if="post.data.description"
+          class="mt-3 text-base text-base-content/70"
+          @text="post.data.description"
+        ></p>
+      </a>
+    </li>
+  </ul>
 </div>

@@ -10,9 +10,9 @@ title: "Ming Liang's Page"
       I'm a software engineer based in Singapore 🇸🇬
     </p>
 
-    <h2 class="text-2xl font-bold">Posts</h2>
-    <ul>
-      <li webc:for="post of collections.posts">
+    <h2 class="text-2xl font-bold">Recent posts</h2>
+    <ul class="list-disc list-inside flex flex-col gap-2">
+      <li webc:for="post of collections.posts.toReversed().slice(0, 5)">
         <a class="hover:underline" :href="post.url" @text="post.data.title"></a>
       </li>
     </ul>

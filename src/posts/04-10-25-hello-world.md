@@ -1,7 +1,7 @@
 ---
 title: "Hello, World!"
-created: "2025-10-04"
-updated: "2025-10-04"
+created: Created
+description: A short welcome note to kick off my new site — what it’s about, what I’m building with, and what I hope to share here.
 ---
 
 Welcome to my site! I'm **Ming Liang**, a software engineer based in Singapore.  

@@ -5,6 +5,10 @@ title: "Projects"
 
 <div class="flex flex-col gap-4">
   <h1 class="text-3xl font-bold">Projects</h1>
+  <p class="text-base-content/70">
+    Long-form notes on the projects I am building, experiments I am trying, and
+    the lessons picked up along the way.
+  </p>
   <p>This is where I'll showcase some of my projects.</p>
 
   <!-- work in progress -->
