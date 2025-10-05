@@ -4,9 +4,6 @@ import pluginWebc from "@11ty/eleventy-plugin-webc";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import tailwindcss from "@tailwindcss/postcss";
 import postcss from "postcss";
-import { DateTime } from "luxon";
-
-const TIME_ZONE = "Asia/Singapore";
 
 export default async function (eleventyConfig) {
   // plugins
