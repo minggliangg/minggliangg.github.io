@@ -7,7 +7,7 @@ layout: layouts/base.webc
   <div class="flex gap-4 text-sm text-stone-600 dark:text-stone-400 mb-4">
     <div class="flex items-center gap-2">
       <span class="font-medium">Created:</span>
-      <time datetime="@text="page.date" @text="page.date"></time>
+      <time datetime="@text="page.date" @text="page.date.toLocaleDateString('en-SG',{ day: 'numeric', month: 'long' ,year: 'numeric'})"></time>
     </div>
   </div>
   <p></p>
