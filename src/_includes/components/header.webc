@@ -42,9 +42,21 @@
       }
     };
 
+    const updateThemeColor = (theme) => {
+      const themeColors = {
+        nord: '#e5e9f0',
+        forest: '#171212'
+      };
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', themeColors[theme]);
+      }
+    };
+
     const theme = localStorage.getItem('theme') || 'nord';
     document.documentElement.setAttribute('data-theme', theme);
     updateIcons(theme);
+    updateThemeColor(theme);
 
     document.getElementById('theme-toggle')?.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
@@ -52,6 +64,7 @@
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateIcons(next);
+      updateThemeColor(next);
     });
   })();
 </script>

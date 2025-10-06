@@ -4,6 +4,10 @@
     <link webc:keep rel="stylesheet" href="/styles/index.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e5e9f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#171212" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title @text="title"></title>
     <link webc:keep rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
     <link webc:keep rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />
