@@ -1,6 +1,6 @@
 ---
 title: "Hello, World!"
-description: A short welcome note to kick off my new site — what it’s about, what I’m building with, and what I hope to share here.
+description: A short welcome note to kick off my new site — what it's about, what I'm building with, and what I hope to share here.
 date: 2025-10-04T22:00:00.00+08:00
 ---
 
