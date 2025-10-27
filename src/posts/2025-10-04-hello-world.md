@@ -4,7 +4,7 @@ description: A short welcome note to kick off my new site — what it's about, w
 date: 2025-10-04T22:00:00.00+08:00
 ---
 
-Welcome to my site! I'm **Ming Liang**, a software engineer based in Singapore.  
+Welcome to my site! I'm **Ming Liang**, a software engineer based in Singapore.
 I started this site as a way to document my journey in software engineering and to showcase some of the work I’ve done along the way.
 
 This site is built using [Eleventy (11ty)](https://www.11ty.dev/), [WebC](https://webc-lang.org/), and [Tailwind CSS](https://tailwindcss.com/), and is deployed on [GitHub Pages](https://pages.github.com/). It’s my first time combining these tools, and I’m excited to explore what I can build with them.
