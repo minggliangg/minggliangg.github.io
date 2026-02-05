@@ -11,27 +11,28 @@ Personal website built with Eleventy, WebC, Tailwind CSS, and DaisyUI.
 
 ## Prerequisites
 
-- Node.js (latest LTS version recommended)
-- pnpm 10.17.1 or higher
+- Bun (latest version recommended)
 
 ## Getting Started
 
 1. **Install dependencies**
+
    ```bash
-   pnpm install
+   bun install
    ```
 
 2. **Start development server**
    ```bash
-   pnpm dev
+   bun dev
    ```
-   The site will be available at `http://localhost:8080` with live reload.
 
-3. **Build for production**
-   ```bash
-   pnpm build
-   ```
-   The built site will be in the `_site` directory.
+The site will be available at `http://localhost:8080` with live reload.
+
+3.  **Build for production**
+    ```bash
+    bun build
+    ```
+    The built site will be in the `_site` directory.
 
 ## Project Structure
 
