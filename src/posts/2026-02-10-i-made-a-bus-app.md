@@ -8,8 +8,7 @@ tags:
 
 I made\* a bus app.
 
-It’s called **My Bus Assistant**, and you can try it here:  
-https://my-bus-assistant.minggliangg.com/
+It’s called **My Bus Assistant**, and you can try it [here](https://my-bus-assistant.minggliangg.com/).
 
 The asterisk is important. I’ll explain.
 
