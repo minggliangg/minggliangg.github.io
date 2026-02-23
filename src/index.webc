@@ -3,26 +3,41 @@ layout: layouts/base.webc
 title: "Ming Liang's Page"
 ---
 
-<div class="flex flex-col md:flex-row gap-8 items-center">
-  <div class="flex flex-col gap-4 flex-1 order-2 md:order-1">
-    <h1 class="text-3xl font-bold">Hi, I am Ming Liang!</h1>
-    <p class="text-xl font-normal">
-      I'm a software engineer based in Singapore 🇸🇬
-    </p>
-
-    <h2 class="text-2xl font-bold">Recent posts</h2>
-    <ul class="list-disc list-inside flex flex-col gap-2">
-      <li webc:for="post of collections.posts.toReversed().slice(0, 5)">
-        <a class="hover:underline" :href="post.url" @text="post.data.title"></a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="flex-shrink-0 order-1 md:order-2">
+<div class="flex flex-col gap-16 motion-rise">
+  <div class="flex flex-col gap-6">
     <img
       src="/images/profile.png"
       alt="Ming Liang"
-      class="w-64 object-cover aspect-auto"
+      class="w-16 h-16 rounded-full object-cover"
     />
+    <h1 class="text-5xl sm:text-7xl font-black tracking-tighter leading-none text-base-content">
+      Ming Liang
+    </h1>
+    <p class="text-xl font-light text-base-content/60 max-w-lg">
+      Software engineer based in Singapore. Building web apps, exploring new technologies.
+    </p>
+  </div>
+
+  <hr class="border-base-content/10" />
+
+  <div class="flex flex-col gap-6 motion-rise motion-delay-1">
+    <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/40">Recent Posts</h2>
+    <div class="flex flex-col">
+      <div webc:for="post of collections.posts.toReversed().slice(0, 5)" class="group">
+        <a
+          :href="post.url"
+          class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-4 border-b border-base-content/8 no-underline hover:no-underline"
+        >
+          <time
+            class="text-xs font-mono text-base-content/30 shrink-0 sm:w-28"
+            @text="post.date.toLocaleDateString('en-SG', { day: 'numeric', month: 'short', year: 'numeric' })"
+          ></time>
+          <span
+            class="text-base font-medium text-base-content group-hover:text-primary transition-colors duration-200"
+            @text="post.data.title"
+          ></span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,31 +1,24 @@
-<div class="navbar bg-base-100 shadow-sm">
-  <div class="max-w-4xl mx-auto w-full flex justify-between">
-    <div class="flex-1">
-      <a
-        class="text-xl no-underline hover:no-underline active:bg-transparent"
-        href="/"
-      >
-        <logo class="fill-current w-18 h-18"></logo
-      ></a>
-    </div>
-    <div class="flex-none">
-      <ul class="menu menu-horizontal px-2 gap-2 sm:px-6 sm:gap-4 md:px-10 md:gap-8 items-center">
-      <li><a href="/projects/">Projects</a></li>
-      <li><a href="/posts/">Posts</a></li>
-      <li><a href="/about/">About</a></li>
-      <li>
-        <button id="theme-toggle" class="btn btn-ghost btn-circle" aria-label="Toggle theme">
-          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-          </svg>
-          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-          </svg>
-        </button>
-      </li>
-    </ul>
+<header class="fixed top-0 left-0 right-0 z-50 bg-base-100/95 backdrop-blur-sm border-b border-base-content/8">
+  <div class="max-w-5xl mx-auto w-full flex items-center justify-between px-8 h-14">
+    <a href="/" class="flex items-center gap-3 no-underline hover:no-underline" aria-label="Ming Liang — Home">
+      <logo class="fill-current w-7 h-7"></logo>
+      <span class="text-xs font-semibold tracking-widest uppercase text-base-content">Ming Liang</span>
+    </a>
+    <nav class="flex items-center gap-6">
+      <a href="/projects/" class="text-xs tracking-widest uppercase text-base-content/60 hover:text-base-content transition-colors duration-200 no-underline">Projects</a>
+      <a href="/posts/" class="text-xs tracking-widest uppercase text-base-content/60 hover:text-base-content transition-colors duration-200 no-underline">Posts</a>
+      <a href="/about/" class="text-xs tracking-widest uppercase text-base-content/60 hover:text-base-content transition-colors duration-200 no-underline">About</a>
+      <button id="theme-toggle" aria-label="Toggle theme" class="w-8 h-8 flex items-center justify-center text-base-content/60 hover:text-base-content transition-colors duration-200 cursor-pointer">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 hidden">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+      </button>
+    </nav>
   </div>
-</div>
+</header>
 
 <script webc:keep>
   (function() {
@@ -33,7 +26,7 @@
     const moonIcon = document.getElementById('moon-icon');
 
     const updateIcons = (theme) => {
-      if (theme === 'forest') {
+      if (theme === 'editorial-dark') {
         sunIcon.classList.remove('hidden');
         moonIcon.classList.add('hidden');
       } else {
@@ -43,24 +36,31 @@
     };
 
     const updateThemeColor = (theme) => {
-      const themeColors = {
-        nord: '#e5e9f0',
-        forest: '#171212'
-      };
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', themeColors[theme]);
-      }
+      const color = theme === 'editorial-dark' ? '#0f0f0f' : '#f9f8f7';
+      document.querySelectorAll('meta[name="theme-color"]').forEach(tag => {
+        tag.setAttribute('content', color);
+      });
     };
 
-    const theme = localStorage.getItem('theme') || 'nord';
+    // TODO: remove once the `nord`/`forest` palette is fully deprecated (target date: 2026-05-01).
+    const resolveTheme = (storedTheme) => {
+      if (storedTheme === 'forest') return 'editorial-dark';
+      if (storedTheme === 'nord') return 'editorial';
+      if (storedTheme === 'editorial' || storedTheme === 'editorial-dark') {
+        return storedTheme;
+      }
+      return 'editorial';
+    };
+
+    const theme = resolveTheme(localStorage.getItem('theme'));
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
     updateIcons(theme);
     updateThemeColor(theme);
 
     document.getElementById('theme-toggle')?.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'nord' ? 'forest' : 'nord';
+      const next = current === 'editorial' ? 'editorial-dark' : 'editorial';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
       updateIcons(next);

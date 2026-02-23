@@ -7,8 +7,8 @@
     <!-- Cache control: allow caching for 7 days -->
     <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
     <meta http-equiv="Expires" content="7d" />
-    <meta name="theme-color" content="#e5e9f0" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#171212" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f9f8f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title @text="title"></title>
@@ -20,10 +20,17 @@
       href="/favicons/apple-touch-icon.png"
     />
     <link webc:keep rel="manifest" href="/favicons/manifest.webmanifest" />
+    <link webc:keep rel="preconnect" href="https://fonts.googleapis.com" />
+    <link webc:keep rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      webc:keep
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    />
   </head>
   <body class="min-h-screen flex flex-col">
     <header></header>
-    <div class="px-8 py-10 max-w-4xl mx-auto w-full">
+    <div class="px-8 pb-10 pt-24 max-w-5xl mx-auto w-full">
       <slot @raw="content" webc:nokeep></slot>
     </div>
     <footer></footer>

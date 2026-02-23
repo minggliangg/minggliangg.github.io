@@ -2,14 +2,13 @@
 layout: layouts/base.webc
 ---
 
-<article class="prose prose-stone">
-  <h1 @text="title"></h1>
-  <div class="flex gap-4 text-sm text-stone-600 dark:text-stone-400 mb-4">
-    <div class="flex items-center gap-2">
-      <span class="font-medium">Created:</span>
-      <time datetime="@text="page.date" @text="page.date.toLocaleDateString('en-SG',{ day: 'numeric', month: 'long' ,year: 'numeric'})"></time>
-    </div>
+<article class="prose prose-neutral">
+  <div class="not-prose mb-10 flex flex-col gap-2">
+    <time
+      class="text-xs font-mono tracking-widest uppercase text-base-content/40"
+      @text="page.date.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' })"
+    ></time>
+    <h1 class="text-4xl font-black tracking-tight leading-tight text-base-content mt-1" @text="title"></h1>
   </div>
-  <p></p>
   <slot @raw="content" webc:nokeep></slot>
 </article>

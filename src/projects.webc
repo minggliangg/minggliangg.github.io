@@ -3,100 +3,96 @@ layout: layouts/base.webc
 title: "Projects"
 ---
 
-<div class="relative flex flex-col gap-8 overflow-hidden">
-  <div class="pointer-events-none absolute -top-16 right-0 h-40 w-40 rounded-full bg-primary/20 blur-3xl motion-float"></div>
-  <div class="pointer-events-none absolute -bottom-12 left-0 h-40 w-40 rounded-full bg-secondary/20 blur-3xl motion-float motion-delay-1"></div>
-
-  <div class="space-y-3 motion-rise">
-    <h1 class="text-4xl font-black tracking-tight">Projects</h1>
-    <p class="max-w-2xl text-base-content/70">
+<div class="flex flex-col gap-12">
+  <div class="flex flex-col gap-3 motion-rise">
+    <h1 class="text-5xl font-black tracking-tighter leading-none">Projects</h1>
+    <p class="text-base font-light text-base-content/60 max-w-lg motion-fade motion-delay-1">
       Products I have shipped recently, from game experiments to practical tools
       that solve everyday problems.
     </p>
   </div>
 
-  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-    <article class="group card border border-base-content/10 bg-base-100 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/30 motion-rise motion-delay-1">
-      <figure class="bg-base-200/70 p-8">
-        <img
-          src="/images/my-bus-assistant-logo.svg"
-          alt="My Bus Assistant logo"
-          class="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-105"
-        />
-      </figure>
-      <div class="card-body gap-4">
-        <div class="flex items-center justify-between gap-3">
-          <h2 class="card-title text-2xl">My Bus Assistant</h2>
-          <span class="badge badge-success badge-outline">Live</span>
-        </div>
-        <p class="text-base-content/80">
-          A fast Singapore bus-arrival web app with real-time data, smart search,
-          favorites, nearby stops, and offline-friendly caching.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge badge-primary badge-sm">React 19</span>
-          <span class="badge badge-primary badge-sm">Hono</span>
-          <span class="badge badge-primary badge-sm">Bun</span>
-          <span class="badge badge-primary badge-sm">Turborepo</span>
-          <span class="badge badge-primary badge-sm">Tailwind CSS</span>
-        </div>
-        <div class="card-actions mt-2 justify-end">
-          <a
-            href="https://github.com/minggliangg/my-bus-assistant"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-outline btn-sm"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://my-bus-assistant.minggliangg.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary btn-sm"
-          >
-            Live App
-          </a>
+  <div class="flex flex-col">
+    <hr class="border-base-content/10" />
+
+    <article class="py-10 border-b border-base-content/10 motion-rise motion-delay-1">
+      <div class="flex items-start gap-6 sm:gap-10">
+        <span class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16">01</span>
+        <div class="flex flex-col gap-4 flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-bold tracking-tight">My Bus Assistant</h2>
+              <p class="text-base text-base-content/60 max-w-prose">
+                A fast Singapore bus-arrival web app with real-time data, smart search,
+                favorites, nearby stops, and offline-friendly caching.
+              </p>
+            </div>
+            <div class="flex sm:flex-col gap-4 sm:gap-2 shrink-0 sm:text-right">
+              <a
+                href="https://my-bus-assistant.minggliangg.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline"
+              >
+                Live App ↗
+              </a>
+              <a
+                href="https://github.com/minggliangg/my-bus-assistant"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">React 19</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Hono</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Bun</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Turborepo</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Tailwind CSS</span>
+          </div>
         </div>
       </div>
     </article>
 
-    <article class="group card border border-base-content/10 bg-base-100 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/30 motion-rise motion-delay-2">
-      <figure class="bg-base-200/70 p-8">
-        <img
-          src="/images/breakthrough.svg"
-          alt="React Breakthrough logo"
-          class="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-105"
-        />
-      </figure>
-      <div class="card-body gap-4">
-        <div class="flex items-center justify-between gap-3">
-          <h2 class="card-title text-2xl">React Breakthrough</h2>
-          <span class="badge badge-success badge-outline">Live</span>
-        </div>
-        <p class="text-base-content/80">
-          A digital version of the abstract strategy game Breakthrough with
-          drag-and-drop gameplay, board customization, themes, and responsive UX.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge badge-primary badge-sm">React 19</span>
-          <span class="badge badge-primary badge-sm">TypeScript</span>
-          <span class="badge badge-primary badge-sm">Vite</span>
-          <span class="badge badge-primary badge-sm">Tailwind CSS</span>
-          <span class="badge badge-primary badge-sm">@dnd-kit</span>
-        </div>
-        <div class="card-actions mt-2 justify-end">
-          <a
-            href="https://github.com/minggliangg/react-breakthrough"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-outline btn-sm"
-          >
-            GitHub
-          </a>
-          <a href="/react-breakthrough" class="btn btn-primary btn-sm">
-            Live Demo
-          </a>
+    <article class="py-10 border-b border-base-content/10 motion-rise motion-delay-2">
+      <div class="flex items-start gap-6 sm:gap-10">
+        <span class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16">02</span>
+        <div class="flex flex-col gap-4 flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-bold tracking-tight">React Breakthrough</h2>
+              <p class="text-base text-base-content/60 max-w-prose">
+                A digital version of the abstract strategy game Breakthrough with
+                drag-and-drop gameplay, board customization, themes, and responsive UX.
+              </p>
+            </div>
+            <div class="flex sm:flex-col gap-4 sm:gap-2 shrink-0 sm:text-right">
+              <a
+                href="/react-breakthrough"
+                class="text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline"
+              >
+                Live Demo ↗
+              </a>
+              <a
+                href="https://github.com/minggliangg/react-breakthrough"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">React 19</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">TypeScript</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Vite</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Tailwind CSS</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">@dnd-kit</span>
+          </div>
         </div>
       </div>
     </article>
