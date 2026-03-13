@@ -7,16 +7,46 @@ title: "About"
   <div class="motion-rise">
     <h1 class="text-5xl font-black tracking-tighter leading-none mb-8">About</h1>
     <p class="text-3xl font-light leading-relaxed text-base-content/80">
-      I'm Ming Liang — a software engineer based in Singapore, building tools people actually want to use.
+      I'm Ming Liang — a software engineer based in Singapore, building practical software, testing ideas quickly, and writing about what I learn along the way.
     </p>
   </div>
 
   <hr class="border-base-content/10 motion-fade motion-delay-1" />
 
-  <div class="flex flex-col gap-4 motion-rise motion-delay-2">
+  <div class="flex flex-col gap-6 motion-rise motion-delay-2">
     <p class="max-w-prose text-base leading-relaxed text-base-content/70">
-      Hi, I'm Ming Liang, a software engineer based in Singapore 🇸🇬. I love
-      building web applications and exploring new technologies.
+      I like working on products that feel grounded in real use, whether that is a web app people can open every day, a small tool that removes friction, or an experiment that helps me understand a new technology properly instead of just talking about it.
+    </p>
+    <p class="max-w-prose text-base leading-relaxed text-base-content/70">
+      A lot of what I build sits somewhere between software engineering and curiosity. I spend a fair amount of time exploring AI workflows, local-first ideas, developer tooling, and small product experiments that start from ordinary problems and turn into something worth shipping.
+    </p>
+    <p class="max-w-prose text-base leading-relaxed text-base-content/70">
+      This site is where I keep track of that work. Some posts are project notes. Some are technical reflections. Some are just me trying to make sense of what actually worked, what did not, and what I would do differently next time.
+    </p>
+  </div>
+
+  <hr class="border-base-content/10 motion-fade motion-delay-2" />
+
+  <div class="grid gap-8 sm:grid-cols-2 motion-rise motion-delay-3">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/40">What I Work On</h2>
+      <p class="text-base leading-relaxed text-base-content/70">
+        Mostly web products, side projects, and AI-assisted development workflows. I care about shipping things that are simple, useful, and technically solid.
+      </p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/40">What You'll Find Here</h2>
+      <p class="text-base leading-relaxed text-base-content/70">
+        Build logs, project write-ups, notes on AI tooling, and occasional thoughts on how software gets made when the tools and constraints keep changing.
+      </p>
+    </div>
+  </div>
+
+  <hr class="border-base-content/10 motion-fade motion-delay-3" />
+
+  <div class="flex flex-col gap-4 motion-rise motion-delay-4">
+    <p class="max-w-prose text-base leading-relaxed text-base-content/70">
+      If a post resonates with you, or if you're building something in a similar space, feel free to reach out. I'm always interested in thoughtful conversations about product ideas, engineering tradeoffs, and the weirdly practical future of AI.
     </p>
   </div>
 </div>

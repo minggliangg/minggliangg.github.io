@@ -63,6 +63,41 @@ title: "Projects"
         <div class="flex flex-col gap-4 flex-1 min-w-0">
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
             <div class="flex flex-col gap-2">
+              <h2 class="text-2xl font-bold tracking-tight">Home Grimoire</h2>
+              <p class="text-base text-base-content/60 max-w-prose">
+                A local-first iOS assistant for home appliance manuals, exploring
+                on-device AI, manual retrieval, and more reliable ways to answer
+                practical questions at home.
+              </p>
+            </div>
+            <div class="flex sm:flex-col gap-4 sm:gap-2 shrink-0 sm:text-right">
+              <a
+                href="https://github.com/minggliangg/Home-Grimoire"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">iOS</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">SwiftUI</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Foundation Models</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">RAG</span>
+            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Local AI</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="py-10 border-b border-base-content/10 motion-rise motion-delay-3">
+      <div class="flex items-start gap-6 sm:gap-10">
+        <span class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16">03</span>
+        <div class="flex flex-col gap-4 flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
+            <div class="flex flex-col gap-2">
               <h2 class="text-2xl font-bold tracking-tight">React Breakthrough</h2>
               <p class="text-base text-base-content/60 max-w-prose">
                 A digital version of the abstract strategy game Breakthrough with
