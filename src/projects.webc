@@ -15,118 +15,37 @@ title: "Projects"
   <div class="flex flex-col">
     <hr class="border-base-content/10" />
 
-    <article class="py-10 border-b border-base-content/10 motion-rise motion-delay-1">
+    <article webc:for="project, index of projects" class="py-10 border-b border-base-content/10 motion-rise">
       <div class="flex items-start gap-6 sm:gap-10">
-        <span class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16">01</span>
+        <span
+          class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16"
+          @text="String(index + 1).padStart(2, '0')"
+        ></span>
         <div class="flex flex-col gap-4 flex-1 min-w-0">
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
             <div class="flex flex-col gap-2">
-              <h2 class="text-2xl font-bold tracking-tight">My Bus Assistant</h2>
-              <p class="text-base text-base-content/60 max-w-prose">
-                A fast Singapore bus-arrival web app with real-time data, smart search,
-                favorites, nearby stops, and offline-friendly caching.
-              </p>
+              <h2 class="text-2xl font-bold tracking-tight" @text="project.title"></h2>
+              <p class="text-base text-base-content/60 max-w-prose" @text="project.description"></p>
             </div>
-            <div class="flex sm:flex-col gap-4 sm:gap-2 shrink-0 sm:text-right">
+            <div class="flex flex-wrap sm:flex-col gap-x-4 gap-y-2 shrink-0 sm:text-right">
               <a
-                href="https://my-bus-assistant.minggliangg.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline"
+                webc:for="link, linkIndex of project.links"
+                :href="link.url"
+                :target="link.url.startsWith('http') ? '_blank' : undefined"
+                :rel="link.url.startsWith('http') ? 'noopener noreferrer' : undefined"
+                :class="linkIndex === 0 ? 'text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline' : 'text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline'"
               >
-                Live App ↗
-              </a>
-              <a
-                href="https://github.com/minggliangg/my-bus-assistant"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline"
-              >
-                GitHub ↗
+                <span @text="link.label"></span>
+                <span>↗</span>
               </a>
             </div>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">React 19</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Hono</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Bun</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Turborepo</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Tailwind CSS</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="py-10 border-b border-base-content/10 motion-rise motion-delay-2">
-      <div class="flex items-start gap-6 sm:gap-10">
-        <span class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16">02</span>
-        <div class="flex flex-col gap-4 flex-1 min-w-0">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
-            <div class="flex flex-col gap-2">
-              <h2 class="text-2xl font-bold tracking-tight">Home Grimoire</h2>
-              <p class="text-base text-base-content/60 max-w-prose">
-                A local-first iOS assistant for home appliance manuals, exploring
-                on-device AI, manual retrieval, and more reliable ways to answer
-                practical questions at home.
-              </p>
-            </div>
-            <div class="flex sm:flex-col gap-4 sm:gap-2 shrink-0 sm:text-right">
-              <a
-                href="https://github.com/minggliangg/Home-Grimoire"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline"
-              >
-                GitHub ↗
-              </a>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">iOS</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">SwiftUI</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Foundation Models</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">RAG</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Local AI</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="py-10 border-b border-base-content/10 motion-rise motion-delay-3">
-      <div class="flex items-start gap-6 sm:gap-10">
-        <span class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16">03</span>
-        <div class="flex flex-col gap-4 flex-1 min-w-0">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
-            <div class="flex flex-col gap-2">
-              <h2 class="text-2xl font-bold tracking-tight">React Breakthrough</h2>
-              <p class="text-base text-base-content/60 max-w-prose">
-                A digital version of the abstract strategy game Breakthrough with
-                drag-and-drop gameplay, board customization, themes, and responsive UX.
-              </p>
-            </div>
-            <div class="flex sm:flex-col gap-4 sm:gap-2 shrink-0 sm:text-right">
-              <a
-                href="/react-breakthrough"
-                class="text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline"
-              >
-                Live Demo ↗
-              </a>
-              <a
-                href="https://github.com/minggliangg/react-breakthrough"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline"
-              >
-                GitHub ↗
-              </a>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">React 19</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">TypeScript</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Vite</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">Tailwind CSS</span>
-            <span class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded">@dnd-kit</span>
+            <span
+              webc:for="tag of project.tags"
+              class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded"
+              @text="tag"
+            ></span>
           </div>
         </div>
       </div>

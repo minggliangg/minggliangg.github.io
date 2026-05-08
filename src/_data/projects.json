@@ -1,0 +1,81 @@
+[
+  {
+    "title": "Z.AI MCP Extensions for Zed",
+    "description": "Zed extensions that wrap the Z.AI MCP servers so the Zed Agent can use the tools without depending on remote MCP connections that kept failing in day-to-day use.",
+    "links": [
+      {
+        "label": "Write-up",
+        "url": "/posts/2026-05-09-building-zai-mcp-extensions-for-zed/"
+      },
+      {
+        "label": "Web Reader",
+        "url": "https://github.com/minggliangg/zed-mcp-server-zai-web-reader"
+      },
+      {
+        "label": "Web Search",
+        "url": "https://github.com/minggliangg/zed-mcp-server-zai-web-search"
+      },
+      {
+        "label": "ZRead",
+        "url": "https://github.com/minggliangg/zed-mcp-server-zai-zread"
+      }
+    ],
+    "tags": ["Zed", "MCP", "Rust", "GLM", "Agentic Coding"]
+  },
+  {
+    "title": "Zed Extension Development Skill",
+    "description": "A Claude/Codex-style skill that captures the repeatable parts of building Zed MCP extensions, from extension structure and manifest details to testing loops.",
+    "links": [
+      {
+        "label": "Write-up",
+        "url": "/posts/2026-05-09-building-zai-mcp-extensions-for-zed/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/zed-mcp-extension"
+      }
+    ],
+    "tags": ["Claude", "Skills", "Zed", "Developer Tools"]
+  },
+  {
+    "title": "My Bus Assistant",
+    "description": "A fast Singapore bus-arrival web app with real-time data, smart search, favorites, nearby stops, and offline-friendly caching.",
+    "links": [
+      {
+        "label": "Live App",
+        "url": "https://my-bus-assistant.minggliangg.com/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/my-bus-assistant"
+      }
+    ],
+    "tags": ["React 19", "Hono", "Bun", "Turborepo", "Tailwind CSS"]
+  },
+  {
+    "title": "Home Grimoire",
+    "description": "A local-first iOS assistant for home appliance manuals, exploring on-device AI, manual retrieval, and more reliable ways to answer practical questions at home.",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/Home-Grimoire"
+      }
+    ],
+    "tags": ["iOS", "SwiftUI", "Foundation Models", "RAG", "Local AI"]
+  },
+  {
+    "title": "React Breakthrough",
+    "description": "A digital version of the abstract strategy game Breakthrough with drag-and-drop gameplay, board customization, themes, and responsive UX.",
+    "links": [
+      {
+        "label": "Live Demo",
+        "url": "/react-breakthrough"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/react-breakthrough"
+      }
+    ],
+    "tags": ["React 19", "TypeScript", "Vite", "Tailwind CSS", "@dnd-kit"]
+  }
+]
