@@ -1,6 +1,6 @@
 ---
 title: "Building Z.AI MCP Extensions for Zed"
-description: A draft note on using Zed, Zed Agent, and GLM models to build Zed MCP extensions for the Z.AI MCP servers.
+description: Notes on using Claude Code, GLM models, and MCP tooling to build Zed MCP extensions for the Z.AI MCP servers.
 date: 2026-05-09T21:00:00+08:00
 tags:
   - "AI"
@@ -11,137 +11,118 @@ tags:
 
 I have been using **Zed** a lot more recently.
 
-Part of that is because the editor itself feels fast and focused. But the bigger reason is **Zed Agent**. Having an agent built directly into the editor changes the rhythm of how I work. I can stay close to the code, ask for changes, inspect the result, and keep moving without constantly switching contexts.
+Part of that is because the editor itself feels fast and focused. But the bigger reason is **Zed Agent**. Having an agent directly inside the editor changes the rhythm of how I work. I can stay close to the code, ask for changes, inspect the result, and keep moving without constantly switching contexts.
 
 As usual, my go-to models have been the **GLM models** from Z.AI.
 
-The reason is very practical: I managed to get one of the early bird subscriptions, and for my kind of usage it is effectively unlimited. That makes it much easier to experiment freely. I can ask the model to explore, rewrite, generate, review, and retry without feeling like every prompt needs to be carefully rationed.
-
-That freedom matters more than I expected.
+I managed to get one of the early bird subscriptions, which for my kind of usage is effectively unlimited. That freedom made experimentation much easier. I could ask the model to explore, retry, rewrite, and review without worrying too much about usage limits.
 
 ## The MCP Problem
 
-Along with the GLM subscription, Z.AI provides access to a few MCP servers.
+Along with the subscription, Z.AI also provides access to a few MCP servers.
 
-In my case, that means:
+In my case, that meant:
 
 - three remote MCP servers
 - one local MCP server
 
-On paper, this should be perfect for Zed Agent. MCP is exactly the kind of interface that should let the agent reach outside the editor and use tools in a structured way.
+This sounded perfect for Zed Agent.
 
-In practice, I kept running into the same issue:
+In practice, the remote MCP servers consistently failed to connect properly inside Zed.
 
-**the remote MCP servers would consistently fail to connect in Zed.**
+Normally I probably would have waited for an upstream fix and moved on. There was also another obvious excuse: Zed extensions are built with Rust, which is not a language I know deeply yet.
 
-Maybe this will be fixed eventually. In the past, I probably would have stopped there, waited for an upstream fix, and moved on to something else.
+But this time, the problem itself felt interesting enough to turn into a project.
 
-There was also another obvious excuse: Zed is built in Rust, and Rust is not a language I know deeply yet.
+## Bootstrapping the Extensions
 
-But this time, that felt like part of the point.
+Ironically, I was not initially using Zed Agent to build the extensions.
 
-## Turning the Problem Into a Project
+Instead, I used **Claude Code** together with the GLM models and the already-working MCP setup inside that environment to bootstrap the solution.
 
-Instead of waiting, I decided to treat the issue as a small systems project:
+The process was surprisingly straightforward.
 
-> What if I built Zed MCP extensions for the Z.AI MCP servers myself?
+I first gave the model three things to study:
 
-The slightly recursive part is that I wanted to do it using:
+1. an existing Zed MCP extension implementation
+2. the Z.AI MCP documentation
+3. the Zed extension documentation
 
-- Zed
-- Zed Agent
-- Z.AI's GLM models
-- the broken MCP workflow as the thing I was trying to improve
+From there, I got **GLM 5.1** to start planning the extension structure and connection flow.
 
-That made the project interesting beyond the actual extension code. It became a test of whether the agentic workflow was good enough to help me work in a codebase and language I was not fully comfortable with.
+Once the plan looked reasonable, I delegated the work to a lead GLM 5.1 agent, which then spawned additional agents using Claude Code's experimental Agent Swarm feature.
 
-The answer so far is: yes, but only if I stay involved.
+The first extension still required a fair amount of review and steering from my side. The models were fast, but they still made assumptions that needed checking:
 
-## Rust, Zed Extensions, and AI as a Guide
+- how the extension manifest was structured
+- how MCP commands were launched
+- how Zed expected the server process to behave
+- where the generated code was simply guessing
 
-The main challenge was not "can an AI write code?"
+The workflow worked well, but only because I stayed involved.
 
-It can.
+## Turning the Workflow Into a Skill
 
-The harder question was whether it could help me understand the shape of a Zed extension well enough to make deliberate changes.
+After the first extension was completed, I noticed something else.
 
-This is where the workflow started to feel useful. I could ask the model to explain the extension structure, identify what Zed expects, generate a first pass, then review and tighten the result myself.
+A lot of the valuable work was not actually the extension itself. It was the accumulated context:
 
-That loop was much more valuable than just asking for finished code.
+- what files mattered
+- what failure modes to check
+- how Zed extensions were structured
+- what debugging flow worked best
+- what mistakes the models tended to make
 
-I still had to pay attention to:
+Since I still had context window remaining, I asked the lead agent to convert what we learned into a reusable **Skill** while referencing the final working extension.
 
-- what the extension manifest actually declares
-- how command execution is wired
-- how the MCP server is launched
-- what assumptions the generated code was making
-- where the model was guessing
+Some context had already disappeared along with the spawned agents that had terminated, but enough remained to preserve the important patterns.
 
-The model gave me speed. It did not remove the need for judgment.
+That became the real accelerator.
 
-## Building a Skill Along the Way
+Once the skill existed, the next two extensions were dramatically faster to build. Most of the setup, structure, and validation flow had already been encoded into the workflow.
 
-After repeating the same prompts a few times, I noticed another problem.
+The first extension solved the problem once.
 
-I was teaching the model the same context over and over again:
-
-- how Zed extensions are structured
-- what files matter
-- what MCP-specific details to check
-- what commands to run while testing
-- what failure modes to watch for
-
-So I turned that repeated context into a **Skill**.
-
-The goal of the skill is simple: make future Zed MCP extension work start from a better baseline.
-
-Instead of re-explaining the project shape every time, the skill can encode the development loop and the checks that matter. It becomes a small piece of reusable process, not just a pile of notes.
-
-That might be the most interesting part of the whole experiment.
-
-The extension solves one problem. The skill improves how quickly I can solve the next similar problem.
+The skill made solving similar problems faster afterwards.
 
 ## The Strange Feedback Loop
 
-There is something funny about using an agent to build tooling for that same agent.
+There is something slightly funny about the entire setup.
 
-I started with a broken MCP connection.
+I used:
 
-Then I used Zed Agent and GLM to build Zed extensions that make those MCP tools easier to use.
+- Claude Code
+- GLM models
+- MCP tools
+- agent swarms
 
-Then I created a skill so the agent could help build more of those extensions faster.
+to build extensions that improved MCP support inside Zed so I could continue using Zed Agent more effectively.
 
-It is a very small example, but it points at something larger:
+Then I turned the lessons from building those extensions into a reusable skill so future extensions could be built faster.
 
-> AI development workflows are becoming self-improving systems, as long as the developer keeps shaping the loop.
+It is a very small example, but it feels like a glimpse of where AI-assisted development workflows are heading:
 
-Not autonomous in the magical sense.
+> developers building systems that continuously improve how they themselves build software.
 
-More like a workshop where the tools can help you build better tools, and those better tools make the next round of work less painful.
+Not autonomous software engineering in the magical sense.
 
-## What I Learned
+More like building better workshops for yourself over time.
 
-This project reminded me of a few things.
+## Open Source
 
-First, rough edges in tooling are often good project ideas. If something breaks in your actual workflow often enough, fixing it teaches you more than building a random demo.
+I ended up making everything public in case anyone else is experimenting with Zed MCP integrations or Z.AI tooling.
 
-Second, AI makes unfamiliar codebases less intimidating, but it does not make them risk-free. The model can give you a map, but you still need to check where the roads actually are.
+### Extensions
 
-Third, skills and reusable prompts are underrated. A good skill is not just a prompt shortcut. It is a way to preserve hard-won context so the next session starts with fewer repeated mistakes.
+- https://github.com/minggliangg/zed-mcp-server-zai-web-reader
+- https://github.com/minggliangg/zed-mcp-server-zai-web-search
+- https://github.com/minggliangg/zed-mcp-server-zai-zread
 
-And finally, the best AI projects are still grounded in a real annoyance.
+### Skill
 
-In this case, the annoyance was simple:
+- https://github.com/minggliangg/zed-mcp-extension
 
-> I wanted the Z.AI MCP servers to work properly inside Zed.
-
-So I started building the missing bridge myself.
-
-## What's Next
-
-The next step is to clean up the extensions, test the connection flow more carefully, and decide how much of the work should be published.
-
-I also want to keep improving the skill as I learn more about Zed extension development. If the skill becomes useful enough, it may end up being the more reusable artifact than the extensions themselves.
+I have also submitted pull requests to add the extensions into the official Zed marketplace. Hopefully they make it through review.
 
 For now, this is still a work in progress.
 
