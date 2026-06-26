@@ -1,9 +1,12 @@
 import fs from "fs";
 import path from "path";
+import { createRequire } from "module";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import tailwindcss from "@tailwindcss/postcss";
 import postcss from "postcss";
+
+const require = createRequire(import.meta.url);
 
 export default async function (eleventyConfig) {
   // plugins
@@ -37,7 +40,17 @@ export default async function (eleventyConfig) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
 
-    const result = await postcss([tailwindcss()]).process(cssContent, {
+    // Minify the CSS on production builds; keep it readable for `eleventy --serve`.
+    const isProduction = process.env.ELEVENTY_RUN_MODE === "build";
+    const processors = [tailwindcss()];
+    if (isProduction) {
+      // require() (not ESM import) to load cssnano's CJS build without tripping
+      // the ESM bundler's static analysis of its dependency tree.
+      const cssnano = require("cssnano");
+      processors.push(cssnano());
+    }
+
+    const result = await postcss(processors).process(cssContent, {
       from: tailwindInputPath,
       to: tailwindOutputPath,
     });
