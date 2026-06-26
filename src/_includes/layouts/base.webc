@@ -9,8 +9,8 @@
       name="description"
       :content="description ? description : meta.description"
     />
-    <meta name="theme-color" content="#f9f8f7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f4f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#232020" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link webc:keep rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
@@ -25,14 +25,14 @@
       webc:keep
       rel="preload"
       as="font"
-      href="/fonts/inter-latin.woff2"
+      href="/fonts/jetbrains-mono.woff2"
       type="font/woff2"
       crossorigin
     />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col bg-base-100 text-base-content">
     <header></header>
-    <main class="px-8 pb-10 pt-24 max-w-5xl mx-auto w-full">
+    <main class="px-6 sm:px-8 pb-10 pt-20 sm:pt-24 max-w-3xl mx-auto w-full">
       <slot @raw="content" webc:nokeep></slot>
     </main>
     <footer></footer>

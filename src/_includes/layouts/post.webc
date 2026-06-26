@@ -2,13 +2,23 @@
 layout: layouts/base.webc
 ---
 
-<article class="prose prose-neutral">
-  <div class="not-prose mb-10 flex flex-col gap-2">
-    <time
-      class="text-xs font-mono tracking-widest uppercase text-base-content/65"
-      @text="page.date.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' })"
-    ></time>
-    <h1 class="text-4xl font-black tracking-tight leading-tight text-base-content mt-1" @text="title"></h1>
+<article class="prose prose-neutral max-w-none">
+  <div class="not-prose mb-12 flex flex-col gap-2 motion-rise">
+    <div class="flex items-center gap-3 text-xs text-base-content/55">
+      <span class="text-primary">$</span>
+      <time
+        @text="page.date.toLocaleDateString('en-SG', { day: 'numeric', month: 'short', year: 'numeric' })"
+      ></time>
+      <span webc:if="tags && tags.length && tags !== 'posts'" class="flex flex-wrap gap-1.5">
+        <span webc:for="tag of (Array.isArray(tags) ? tags : [tags]).filter(t => t !== 'posts')" class="text-primary/80"
+          >[<span @text="tag"></span>]</span
+        >
+      </span>
+    </div>
+    <h1
+      class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-base-content mt-1"
+      @text="title"
+    ></h1>
   </div>
   <slot @raw="content" webc:nokeep></slot>
 </article>

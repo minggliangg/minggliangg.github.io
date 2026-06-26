@@ -6,8 +6,11 @@ description: "Products Ming Liang has shipped recently — from game experiments
 
 <div class="flex flex-col gap-12">
   <div class="flex flex-col gap-3 motion-rise">
-    <h1 class="text-5xl font-black tracking-tighter leading-none">Projects</h1>
-    <p class="text-base font-light text-base-content/60 max-w-lg motion-fade motion-delay-1">
+    <div class="flex items-baseline gap-2 text-base-content/45">
+      <span class="text-primary">$</span>
+      <span class="text-sm">ls ~/projects</span>
+    </div>
+    <p class="text-sm font-light text-base-content/55 max-w-lg motion-fade motion-delay-1">
       Products I have shipped recently, from game experiments to practical tools
       that solve everyday problems.
     </p>
@@ -16,37 +19,37 @@ description: "Products Ming Liang has shipped recently — from game experiments
   <div class="flex flex-col">
     <hr class="border-base-content/10" />
 
-    <article webc:for="project, index of projects" class="py-10 border-b border-base-content/10 motion-rise">
-      <div class="flex items-start gap-6 sm:gap-10">
+    <article webc:for="project, index of projects" class="py-8 border-b border-base-content/10 motion-rise">
+      <div class="flex items-start gap-5 sm:gap-8">
         <span
           aria-hidden="true"
-          class="text-5xl sm:text-6xl font-thin text-base-content/50 leading-none select-none shrink-0 w-12 sm:w-16"
-          @text="String(index + 1).padStart(2, '0')"
+          class="text-sm text-primary/70 leading-none select-none shrink-0 w-8 sm:w-10 pt-1"
+          @text="'[' + String(index + 1).padStart(2, '0') + ']'"
         ></span>
-        <div class="flex flex-col gap-4 flex-1 min-w-0">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
+        <div class="flex flex-col gap-3 flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-6">
             <div class="flex flex-col gap-2">
-              <h2 class="text-2xl font-bold tracking-tight" @text="project.title"></h2>
-              <p class="text-base text-base-content/60 max-w-prose" @text="project.description"></p>
+              <h2 class="text-lg sm:text-xl font-semibold tracking-tight text-base-content" @text="project.title"></h2>
+              <p class="text-sm text-base-content/55 max-w-prose leading-relaxed" @text="project.description"></p>
             </div>
-            <div class="flex flex-wrap sm:flex-col gap-x-4 gap-y-2 shrink-0 sm:text-right">
+            <div class="flex flex-wrap sm:flex-col gap-x-4 gap-y-1.5 shrink-0 sm:text-right">
               <a
                 webc:for="link, linkIndex of project.links"
                 :href="link.url"
                 :target="link.url.startsWith('http') ? '_blank' : undefined"
                 :rel="link.url.startsWith('http') ? 'noopener noreferrer' : undefined"
-                :class="linkIndex === 0 ? 'text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline' : 'text-sm text-base-content/65 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline'"
+                :class="linkIndex === 0 ? 'text-xs text-primary hover:underline underline-offset-4 transition-colors duration-150 no-underline' : 'text-xs text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-150 no-underline'"
               >
                 <span @text="link.label"></span>
-                <span>↗</span>
+                <span class="text-primary/60">↗</span>
               </a>
             </div>
           </div>
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-x-3 gap-y-1 mt-1">
             <span
               webc:for="tag of project.tags"
-              class="text-xs font-mono text-base-content/65 border border-base-content/15 px-2 py-0.5 rounded"
-              @text="tag"
+              class="text-xs text-primary/70"
+              @text="'[' + tag + ']'"
             ></span>
           </div>
         </div>
