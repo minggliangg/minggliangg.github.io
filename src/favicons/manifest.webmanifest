@@ -4,8 +4,8 @@
   "description": "Ming Liang — software engineer based in Singapore.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f9f8f7",
-  "theme_color": "#f9f8f7",
+  "background_color": "#f6f4f0",
+  "theme_color": "#f6f4f0",
   "icons": [
     {
       "src": "/favicons/icon.svg",

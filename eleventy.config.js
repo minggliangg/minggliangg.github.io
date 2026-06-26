@@ -19,14 +19,15 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/favicons");
 
-  // Self-host the Inter variable font (latin subset) from @fontsource-variable/inter.
-  // Copied from node_modules at build time so the binary stays out of the repo,
-  // is version-pinned via package.json, and ships with its OFL license.
-  const fontPkg = "node_modules/@fontsource-variable/inter";
+  // Self-host the JetBrains Mono variable font (latin subset) from
+  // @fontsource-variable/jetbrains-mono. Copied from node_modules at build time
+  // so the binary stays out of the repo, is version-pinned via package.json,
+  // and ships with its Apache-2.0 license.
+  const fontPkg = "node_modules/@fontsource-variable/jetbrains-mono";
   eleventyConfig.addPassthroughCopy({
-    [`${fontPkg}/files/inter-latin-wght-normal.woff2`]:
-      "fonts/inter-latin.woff2",
-    [`${fontPkg}/LICENSE`]: "fonts/inter-OFL.txt",
+    [`${fontPkg}/files/jetbrains-mono-latin-wght-normal.woff2`]:
+      "fonts/jetbrains-mono.woff2",
+    [`${fontPkg}/LICENSE`]: "fonts/jetbrains-mono-LICENSE.txt",
   });
 
   // tailwind + daisyui
