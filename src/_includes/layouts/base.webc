@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link webc:keep rel="stylesheet" href="/styles/index.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Cache control: allow caching for 7 days -->
-    <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
-    <meta http-equiv="Expires" content="7d" />
+    <title @text="title"></title>
+    <meta
+      webc:keep
+      name="description"
+      :content="description ? description : meta.description"
+    />
     <meta name="theme-color" content="#f9f8f7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title @text="title"></title>
     <link webc:keep rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
     <link webc:keep rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />
-    <link
-      webc:keep
-      rel="apple-touch-icon"
-      href="/favicons/apple-touch-icon.png"
-    />
+    <link webc:keep rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
     <link webc:keep rel="manifest" href="/favicons/manifest.webmanifest" />
-    <link webc:keep rel="preconnect" href="https://fonts.googleapis.com" />
-    <link webc:keep rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheet (includes the self-hosted @font-face) -->
+    <link webc:keep rel="stylesheet" href="/styles/index.css" />
+    <!-- Preload the variable font so it loads in parallel with the CSS -->
     <link
       webc:keep
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="preload"
+      as="font"
+      href="/fonts/inter-latin.woff2"
+      type="font/woff2"
+      crossorigin
     />
   </head>
   <body class="min-h-screen flex flex-col">
     <header></header>
-    <div class="px-8 pb-10 pt-24 max-w-5xl mx-auto w-full">
+    <main class="px-8 pb-10 pt-24 max-w-5xl mx-auto w-full">
       <slot @raw="content" webc:nokeep></slot>
-    </div>
+    </main>
     <footer></footer>
   </body>
 </html>

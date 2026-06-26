@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.webc
 title: "Posts"
+description: "Long-form notes on the projects Ming Liang is building, experiments in progress, and the lessons picked up along the way."
 ---
 
 <div class="flex flex-col gap-12">
@@ -19,7 +20,7 @@ title: "Posts"
         class="group flex flex-col sm:grid sm:grid-cols-[7rem_1fr] items-baseline gap-1 sm:gap-6 py-5 no-underline hover:no-underline"
       >
         <time
-          class="text-xs font-mono text-base-content/40 shrink-0"
+          class="text-xs font-mono text-base-content/65 shrink-0"
           @text="post.date.toLocaleDateString('en-SG', { day: 'numeric', month: 'short', year: 'numeric' })"
         ></time>
         <h2

@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.webc
 title: "Projects"
+description: "Products Ming Liang has shipped recently — from game experiments and AI tooling to practical everyday tools."
 ---
 
 <div class="flex flex-col gap-12">
@@ -18,7 +19,8 @@ title: "Projects"
     <article webc:for="project, index of projects" class="py-10 border-b border-base-content/10 motion-rise">
       <div class="flex items-start gap-6 sm:gap-10">
         <span
-          class="text-5xl sm:text-6xl font-thin text-base-content/15 leading-none select-none shrink-0 w-12 sm:w-16"
+          aria-hidden="true"
+          class="text-5xl sm:text-6xl font-thin text-base-content/50 leading-none select-none shrink-0 w-12 sm:w-16"
           @text="String(index + 1).padStart(2, '0')"
         ></span>
         <div class="flex flex-col gap-4 flex-1 min-w-0">
@@ -33,7 +35,7 @@ title: "Projects"
                 :href="link.url"
                 :target="link.url.startsWith('http') ? '_blank' : undefined"
                 :rel="link.url.startsWith('http') ? 'noopener noreferrer' : undefined"
-                :class="linkIndex === 0 ? 'text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline' : 'text-sm text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline'"
+                :class="linkIndex === 0 ? 'text-sm text-primary hover:underline underline-offset-4 transition-colors duration-200 no-underline' : 'text-sm text-base-content/65 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-200 no-underline'"
               >
                 <span @text="link.label"></span>
                 <span>↗</span>
@@ -43,7 +45,7 @@ title: "Projects"
           <div class="flex flex-wrap gap-2">
             <span
               webc:for="tag of project.tags"
-              class="text-xs font-mono text-base-content/40 border border-base-content/15 px-2 py-0.5 rounded"
+              class="text-xs font-mono text-base-content/65 border border-base-content/15 px-2 py-0.5 rounded"
               @text="tag"
             ></span>
           </div>

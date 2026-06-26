@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.webc
 title: "About"
+description: "About Ming Liang — a software engineer based in Singapore, building practical software and writing about what I learn."
 ---
 
 <div class="flex flex-col gap-12 max-w-3xl">
@@ -29,13 +30,13 @@ title: "About"
 
   <div class="grid gap-8 sm:grid-cols-2 motion-rise motion-delay-3">
     <div class="flex flex-col gap-3">
-      <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/40">What I Work On</h2>
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/65">What I Work On</h2>
       <p class="text-base leading-relaxed text-base-content/70">
         Mostly web products, side projects, and AI-assisted development workflows. I care about shipping things that are simple, useful, and technically solid.
       </p>
     </div>
     <div class="flex flex-col gap-3">
-      <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/40">What You'll Find Here</h2>
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-base-content/65">What You'll Find Here</h2>
       <p class="text-base leading-relaxed text-base-content/70">
         Build logs, project write-ups, notes on AI tooling, and occasional thoughts on how software gets made when the tools and constraints keep changing.
       </p>

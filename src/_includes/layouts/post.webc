@@ -5,7 +5,7 @@ layout: layouts/base.webc
 <article class="prose prose-neutral">
   <div class="not-prose mb-10 flex flex-col gap-2">
     <time
-      class="text-xs font-mono tracking-widest uppercase text-base-content/40"
+      class="text-xs font-mono tracking-widest uppercase text-base-content/65"
       @text="page.date.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' })"
     ></time>
     <h1 class="text-4xl font-black tracking-tight leading-tight text-base-content mt-1" @text="title"></h1>

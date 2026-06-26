@@ -8,6 +8,7 @@
         "@11ty/eleventy": "^3.1.2",
         "@11ty/eleventy-navigation": "^1.0.4",
         "@11ty/eleventy-plugin-webc": "^0.11.2",
+        "@fontsource-variable/inter": "^5.2.8",
         "@tailwindcss/postcss": "^4.1.14",
         "@tailwindcss/typography": "^0.5.19",
         "daisyui": "^5.1.27",
@@ -43,6 +44,8 @@
     "@11ty/webc": ["@11ty/webc@0.11.4", "", { "dependencies": { "@11ty/eleventy-utils": "^1.0.1", "css-tree": "^2.3.1", "dependency-graph": "^0.11.0", "entities": "^4.4.0", "fast-glob": "^3.2.12", "is-glob": "^4.0.3", "nanoid": "^4.0.1", "node-retrieve-globals": "^2.0.7", "parse5": "^7.1.2" } }, "sha512-q1GMcjNnx9PxUr6jyTT5CdDFma3JWkT5D45wRNYUQ/B4cxTTxpC15b2rYdzNaGuSqB6tsArQ9Qh4BPqg6Xo9cA=="],
 
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
+
+    "@fontsource-variable/inter": ["@fontsource-variable/inter@5.2.8", "", {}, "sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

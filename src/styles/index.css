@@ -13,7 +13,7 @@
   --color-base-200: oklch(94% 0.005 90);
   --color-base-300: oklch(90% 0.005 90);
   --color-base-content: oklch(12% 0 0);
-  --color-primary: oklch(57% 0.22 261);
+  --color-primary: oklch(52% 0.21 261);
   --color-primary-content: oklch(98% 0 0);
   --color-secondary: oklch(70% 0.12 240);
   --color-secondary-content: oklch(10% 0 0);
@@ -61,12 +61,35 @@
   --radius-badge: 0.25rem;
 }
 
+/*
+ * Self-hosted Inter (variable, latin subset) from @fontsource-variable/inter.
+ * Same-origin (no third-party request, no render-blocking stylesheet). The
+ * metric-matched fallback keeps the font swap at near-zero CLS.
+ */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter-fallback";
+  src: local("Arial");
+  font-display: swap;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 107%;
+}
+
 html {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Inter", "Inter-fallback", system-ui, sans-serif;
 }
 
 :root {
-  --font-display: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", "Inter-fallback", system-ui, sans-serif;
 }
 
 @keyframes rise-in {

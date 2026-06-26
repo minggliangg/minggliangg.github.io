@@ -16,6 +16,16 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/favicons");
 
+  // Self-host the Inter variable font (latin subset) from @fontsource-variable/inter.
+  // Copied from node_modules at build time so the binary stays out of the repo,
+  // is version-pinned via package.json, and ships with its OFL license.
+  const fontPkg = "node_modules/@fontsource-variable/inter";
+  eleventyConfig.addPassthroughCopy({
+    [`${fontPkg}/files/inter-latin-wght-normal.woff2`]:
+      "fonts/inter-latin.woff2",
+    [`${fontPkg}/LICENSE`]: "fonts/inter-OFL.txt",
+  });
+
   // tailwind + daisyui
   eleventyConfig.on("eleventy.before", async () => {
     const tailwindInputPath = path.resolve("./src/styles/index.css");
