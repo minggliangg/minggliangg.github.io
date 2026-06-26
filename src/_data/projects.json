@@ -1,5 +1,20 @@
 [
   {
+    "title": "margin.",
+    "description": "A lightweight, client-side Markdown viewer. Drop in a .md file or open one by URL and read it with clean typography, syntax highlighting, Mermaid diagrams, and an auto table of contents. Nothing you open ever leaves your device — there is no backend.",
+    "links": [
+      {
+        "label": "Live App",
+        "url": "/margin/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/margin"
+      }
+    ],
+    "tags": ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Shiki", "Mermaid"]
+  },
+  {
     "title": "Z.AI MCP Extensions for Zed",
     "description": "Zed extensions that wrap the Z.AI MCP servers so the Zed Agent can use the tools without depending on remote MCP connections that kept failing in day-to-day use.",
     "links": [
