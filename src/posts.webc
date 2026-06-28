@@ -6,11 +6,11 @@ description: "Long-form notes on the projects Ming Liang is building, experiment
 
 <div class="flex flex-col gap-12">
   <div class="flex flex-col gap-3 motion-rise">
-    <div class="flex items-baseline gap-2 text-base-content/45">
+    <div class="flex items-baseline gap-2 text-base-content/65">
       <span class="text-primary">$</span>
       <span class="text-sm">ls ~/posts</span>
     </div>
-    <p class="text-sm font-light text-base-content/55 max-w-lg motion-fade motion-delay-1">
+    <p class="text-sm font-light text-base-content/70 max-w-lg motion-fade motion-delay-1">
       Long-form notes on the projects I am building, experiments I am trying,
       and the lessons picked up along the way.
     </p>
@@ -23,14 +23,14 @@ description: "Long-form notes on the projects Ming Liang is building, experiment
         class="group grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr_auto] items-baseline gap-2 sm:gap-4 py-4 no-underline hover:no-underline"
       >
         <time
-          class="text-xs text-base-content/45 shrink-0"
+          class="text-xs text-base-content/65 shrink-0"
           @text="post.date.toLocaleDateString('en-SG', { day: '2-digit', month: 'short', year: 'numeric' })"
         ></time>
         <h2
           class="text-sm sm:text-base text-base-content group-hover:text-primary transition-colors duration-150"
           @text="post.data.title"
         ></h2>
-        <span class="hidden sm:inline text-primary/0 group-hover:text-primary/60 transition-colors duration-150 text-xs">→</span>
+        <span class="hidden sm:inline text-primary/35 group-hover:text-primary/75 transition-colors duration-150 text-xs">→</span>
       </a>
     </div>
   </div>

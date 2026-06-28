@@ -59,6 +59,43 @@ export default async function (eleventyConfig) {
     fs.writeFileSync(tailwindOutputPath, result.css);
   });
 
+  // Minify inline <script> blocks on production builds. Only touches scripts
+  // without a `src` (i.e. inline JS inlined by WebC). Loaded via a runtime
+  // dynamic import() so the ESM bundler doesn't statically analyse terser's
+  // dependency tree — the same lazy-load trick used for cssnano above.
+  const isProduction = process.env.ELEVENTY_RUN_MODE === "build";
+  if (isProduction) {
+    eleventyConfig.addTransform("minify-inline-js", async function (content) {
+      if (!this.page.outputPath?.endsWith(".html")) return content;
+
+      const { minify } = await import("terser");
+      // String.replace ignores returned promises, so collect matches and
+      // rebuild the string once every block has been minified.
+      const re = /<script(\s[^>]*)?>([\s\S]*?)<\/script>/g;
+      const parts = [];
+      let last = 0;
+      let match;
+      while ((match = re.exec(content)) !== null) {
+        parts.push(content.slice(last, match.index));
+        const [whole, attrs, body] = match;
+        // Skip external scripts and empty blocks.
+        if (/\bsrc=/.test(attrs || "") || !body.trim()) {
+          parts.push(whole);
+        } else {
+          const result = await minify(body, {
+            compress: true,
+            mangle: true,
+            format: { comments: false },
+          });
+          parts.push(`<script${attrs || ""}>${result.code}</script>`);
+        }
+        last = re.lastIndex;
+      }
+      parts.push(content.slice(last));
+      return parts.join("");
+    });
+  }
+
   return {
     dir: {
       input: "src",

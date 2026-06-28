@@ -6,7 +6,7 @@ description: "About Ming Liang — a software engineer based in Singapore, build
 
 <div class="flex flex-col gap-12 max-w-2xl">
   <div class="motion-rise">
-    <div class="flex items-baseline gap-2 text-base-content/45 mb-8">
+    <div class="flex items-baseline gap-2 text-base-content/65 mb-8">
       <span class="text-primary">$</span>
       <span class="text-sm">cat ~/about.md</span>
     </div>

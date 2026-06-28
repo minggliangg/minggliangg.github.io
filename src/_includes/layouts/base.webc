@@ -11,7 +11,7 @@
     />
     <meta name="theme-color" content="#f6f4f0" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#232020" media="(prefers-color-scheme: dark)" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link webc:keep rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
     <link webc:keep rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />

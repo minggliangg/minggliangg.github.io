@@ -6,11 +6,11 @@ description: "Products Ming Liang has shipped recently — from game experiments
 
 <div class="flex flex-col gap-12">
   <div class="flex flex-col gap-3 motion-rise">
-    <div class="flex items-baseline gap-2 text-base-content/45">
+    <div class="flex items-baseline gap-2 text-base-content/65">
       <span class="text-primary">$</span>
       <span class="text-sm">ls ~/projects</span>
     </div>
-    <p class="text-sm font-light text-base-content/55 max-w-lg motion-fade motion-delay-1">
+    <p class="text-sm font-light text-base-content/70 max-w-lg motion-fade motion-delay-1">
       Products I have shipped recently, from game experiments to practical tools
       that solve everyday problems.
     </p>
@@ -23,14 +23,14 @@ description: "Products Ming Liang has shipped recently — from game experiments
       <div class="flex items-start gap-5 sm:gap-8">
         <span
           aria-hidden="true"
-          class="text-sm text-primary/70 leading-none select-none shrink-0 w-8 sm:w-10 pt-1"
+          class="text-sm text-primary/80 leading-none select-none shrink-0 w-8 sm:w-10 pt-1"
           @text="'[' + String(index + 1).padStart(2, '0') + ']'"
         ></span>
         <div class="flex flex-col gap-3 flex-1 min-w-0">
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-6">
             <div class="flex flex-col gap-2">
               <h2 class="text-lg sm:text-xl font-semibold tracking-tight text-base-content" @text="project.title"></h2>
-              <p class="text-sm text-base-content/55 max-w-prose leading-relaxed" @text="project.description"></p>
+              <p class="text-sm text-base-content/70 max-w-prose leading-relaxed" @text="project.description"></p>
             </div>
             <div class="flex flex-wrap sm:flex-col gap-x-4 gap-y-1.5 shrink-0 sm:text-right">
               <a
@@ -38,17 +38,17 @@ description: "Products Ming Liang has shipped recently — from game experiments
                 :href="link.url"
                 :target="link.url.startsWith('http') ? '_blank' : undefined"
                 :rel="link.url.startsWith('http') ? 'noopener noreferrer' : undefined"
-                :class="linkIndex === 0 ? 'text-xs text-primary hover:underline underline-offset-4 transition-colors duration-150 no-underline' : 'text-xs text-base-content/50 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-150 no-underline'"
+                :class="linkIndex === 0 ? 'text-xs text-primary hover:underline underline-offset-4 transition-colors duration-150 no-underline' : 'text-xs text-base-content/70 hover:text-base-content hover:underline underline-offset-4 transition-colors duration-150 no-underline'"
               >
                 <span @text="link.label"></span>
-                <span class="text-primary/60">↗</span>
+                <span class="text-primary/70">↗</span>
               </a>
             </div>
           </div>
           <div class="flex flex-wrap gap-x-3 gap-y-1 mt-1">
             <span
               webc:for="tag of project.tags"
-              class="text-xs text-primary/70"
+              class="text-xs text-primary/80"
               @text="'[' + tag + ']'"
             ></span>
           </div>

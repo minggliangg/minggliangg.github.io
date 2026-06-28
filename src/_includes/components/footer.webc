@@ -1,17 +1,17 @@
 <footer class="mt-auto border-t border-base-content/10 bg-base-100">
   <div class="max-w-3xl mx-auto w-full flex flex-wrap items-center justify-between gap-3 px-6 sm:px-8 py-4 text-xs">
-    <div class="flex items-center gap-2 text-base-content/60">
+    <div class="flex items-center gap-2 text-base-content/75">
       <span class="inline-block w-2 h-2 bg-primary"></span>
       <span>© <span @text="new Date().getFullYear()"></span> mingliang</span>
       <span class="hidden sm:inline text-base-content/30">·</span>
-      <span class="hidden sm:inline text-base-content/40">SWE @ singapore</span>
+      <span class="hidden sm:inline text-base-content/65">SWE @ singapore</span>
     </div>
     <div class="flex items-center gap-3">
       <a
         href="https://github.com/minggliangg"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-1 text-base-content/60 hover:text-primary transition-colors duration-200 no-underline"
+        class="flex items-center gap-1 text-base-content/75 hover:text-primary transition-colors duration-200 no-underline"
         aria-label="GitHub"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@
         href="https://www.linkedin.com/in/khongmingliang/"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-1 text-base-content/60 hover:text-primary transition-colors duration-200 no-underline"
+        class="flex items-center gap-1 text-base-content/75 hover:text-primary transition-colors duration-200 no-underline"
         aria-label="LinkedIn"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
