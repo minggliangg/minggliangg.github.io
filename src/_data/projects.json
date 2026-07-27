@@ -1,5 +1,20 @@
 [
   {
+    "title": "composa.",
+    "description": "A local-first image composition board for the browser. Arrange movable and resizable image layers on a base canvas, then export the finished composition as a self-contained SVG.",
+    "links": [
+      {
+        "label": "Live Demo",
+        "url": "/composa/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/composa"
+      }
+    ],
+    "tags": ["React 19", "TypeScript", "Rust", "WASM", "SVG", "Zustand"]
+  },
+  {
     "title": "margin.",
     "description": "A lightweight, client-side Markdown viewer. Drop in a .md file or open one by URL and read it with clean typography, syntax highlighting, Mermaid diagrams, and an auto table of contents. Nothing you open ever leaves your device — there is no backend.",
     "links": [
