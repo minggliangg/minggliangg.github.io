@@ -15,6 +15,21 @@
     "tags": ["React 19", "TypeScript", "Rust", "WASM", "SVG", "Zustand"]
   },
   {
+    "title": "Sumi.",
+    "description": "A quiet, local-first editor for notes, drafts, and code, and a handy companion for LeetCode practice. Write in Markdown with a live preview, syntax highlighting, and a workspace that stays on your device.",
+    "links": [
+      {
+        "label": "Live App",
+        "url": "https://minggliangg.github.io/sumi/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/minggliangg/sumi"
+      }
+    ],
+    "tags": ["SolidJS", "TypeScript", "CodeMirror", "Markdown", "PWA", "Local-First"]
+  },
+  {
     "title": "margin.",
     "description": "A lightweight, client-side Markdown viewer. Drop in a .md file or open one by URL and read it with clean typography, syntax highlighting, Mermaid diagrams, and an auto table of contents. Nothing you open ever leaves your device — there is no backend.",
     "links": [
